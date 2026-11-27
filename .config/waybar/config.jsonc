@@ -1,0 +1,59 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  "height": 24,
+
+  "modules-left": ["hyprland/workspaces", "custom/layout", "hyprland/window"],
+  "modules-center": [],
+  "modules-right": ["tray", "clock", "battery", "custom/weather"],
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{id}",
+    "all-outputs": false,
+    "persistent-workspaces": {
+      "HDMI-A-1": [1, 2, 3, 4, 5],
+      "HDMI-A-2": [6, 7, 8, 9, 10]
+    }
+  },
+
+  "custom/layout": {
+    "exec": "~/.config/waybar/layout.sh",
+    "interval": 1,
+    "on-click": "hyprctl dispatch togglefloating",
+    "tooltip": false
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 50,
+    "separate-outputs": true,
+    "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  },
+
+  "clock": {
+    "format": "{:%H:%M:%S}",
+    "interval": 1,
+    "tooltip": false
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+    "interval": 10,
+    "states": { "warning": 20, "critical": 10 }
+  },
+
+  "custom/weather": {
+    "exec": "~/.config/waybar/weather.sh",
+    "interval": 900,
+    "tooltip": false
+  }
+}

@@ -1,0 +1,135 @@
+/*
+ * artemix — Hyprland / adw-gtk3-dark inspired Rofi theme
+ * Install: mkdir -p ~/.config/rofi/themes
+ *         cp rofi-rice.rasi ~/.config/rofi/themes/artemix.rasi
+ * Use:     rofi -show drun -theme ~/.config/rofi/themes/artemix.rasi
+ */
+
+* {
+    bg:                  #1b1b26;
+    bg-alt:              #242433;
+    bg-selected:         #f7768e;
+    fg:                  #c0caf5;
+    fg-muted:            #737994;
+    accent:              #f6a878;
+    border:              #303044;
+    urgent:              #f7768e;
+
+    background-color:    transparent;
+    text-color:          @fg;
+    font:                "JetBrainsMono Nerd Font 11";
+}
+
+window {
+    width:               620px;
+    padding:             22px;
+    border:              1px;
+    border-color:        @border;
+    border-radius:        0px;
+    background-color:    @bg;
+}
+
+mainbox {
+    spacing:             14px;
+    background-color:    transparent;
+    children:            [ inputbar, message, listview ];
+}
+
+inputbar {
+    padding:             12px 15px;
+    spacing:             10px;
+    border:              1px;
+    border-color:        @border;
+    border-radius:        0px;
+    background-color:    @bg-alt;
+    text-color:          @fg;
+    children:            [ prompt, entry ];
+}
+
+prompt {
+    text-color:          @accent;
+    background-color:    transparent;
+}
+
+entry {
+    placeholder:         "Search applications…";
+    placeholder-color:   @fg-muted;
+    background-color:    transparent;
+    text-color:          @fg;
+    cursor:              text;
+}
+
+message {
+    padding:             7px 11px;
+    border-radius:        0px;
+    background-color:    @bg-alt;
+    text-color:          @fg-muted;
+}
+
+textbox {
+    background-color:    transparent;
+    text-color:          @fg-muted;
+}
+
+listview {
+    columns:             1;
+    lines:               7;
+    cycle:               true;
+    dynamic:             true;
+    scrollbar:           false;
+    spacing:             4px;
+    padding:             2px 0;
+    background-color:    transparent;
+}
+
+element {
+    padding:             10px 12px;
+    spacing:             11px;
+    border-radius:        0px;
+    background-color:    transparent;
+    text-color:          @fg;
+    cursor:              pointer;
+}
+
+element normal.normal {
+    background-color:    transparent;
+    text-color:          @fg;
+}
+
+element normal.urgent {
+    background-color:    transparent;
+    text-color:          @urgent;
+}
+
+element normal.active {
+    background-color:    transparent;
+    text-color:          @accent;
+}
+
+element selected.normal {
+    background-color:    @bg-alt;
+    text-color:          @accent;
+}
+
+element selected.urgent {
+    background-color:    @urgent;
+    text-color:          @bg;
+}
+
+element selected.active {
+    background-color:    @bg-alt;
+    text-color:          @accent;
+}
+
+element-icon {
+    size:                26px;
+    cursor:              inherit;
+    background-color:    transparent;
+}
+
+element-text {
+    vertical-align:      0.5;
+    background-color:    transparent;
+    text-color:          inherit;
+    cursor:              inherit;
+}
